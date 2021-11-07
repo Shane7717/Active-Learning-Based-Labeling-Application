@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EasyLabeler</title>
+        <style type = "text/css">
+            body {
+                background: url("images/loginBackground.jpeg");
+                background-size: cover;
+            }
+            p.title {
+                font-size: 3.0em;
+                font-weight: bold;
+                color: blue;
+            }
+            .relative{
+                position: relative;
+                left: 30%;
+            }
+	        .relative1{
+               position: relative;
+               left: 35%;
+            }
+	   button{
+                width: 150px;
+                height: 70px;  
+                padding:8px;  
+                background-color: #428bca;  
+                border-color: #357ebd;  
+                color: #fff;  
+                border-radius: 10px; /* future proofing */
+                text-align: center;  
+                vertical-align: middle;  
+                border: 1px solid transparent;  
+                font-weight: 900;  
+                font-size:150%;
+            }
+	   button:hover {
+                color: blue;
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    
+    <body> 
+        <div><p class = "title">
+            Welcome to EasyLabeler
+        </p></div>
+        <div><blockquote style = "font-size: 1.5em; font-weight: 900; font-style: italic; color: aqua;">
+            EasyLabeler is an active learning based data annotation tool. <br><br>
+            You are supposed to use your own account to login first.
+        </blockquote></div><br>
+        
+       
+        <div class = "relative"><code style = "font-size: 1.3em; color: yellow;" >
+            <h1>Log in</h1>
+        </code></div>
+        <form action = "login.php"; method = "POST"; style = "font-weight: bold;">
+            
+            <div class = "relative" style = "color: black; font-size: 1.2em"><label>
+                Username: <input type = "text" name = "name" required = "true" placeholder = "Input your username"/>
+            </label></div><br>
+            
+            <div class = "relative" style = "color: black; font-size: 1.2em"><label>
+                Password: &nbsp;<input type = "password" name = "password" required = "true" placeholder = "Input your password">
+            </label></div><br>
+            
+            <div class = "relative"><label>
+               <input type = "Submit" value = "Log in" style = "font-size: 50px"/>
+            </label></div><br>
+            <a href = "register.html" style = "color: red; font-size: 1.2em"> 
+                <div class = "relative">
+                    Create a new account
+                </div>
+            </a>
+        </form><br><br><br><br> 
+
+    </body>
+</html>

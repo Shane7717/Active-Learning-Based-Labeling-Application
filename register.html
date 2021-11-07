@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Create Account</title>
+        <style type = "text/css">
+            body {
+                background: url("images/registerBackground.jpeg");
+                background-size: cover;
+            }
+            .relative{
+                position: relative;
+                left: 40%;
+            }
+        </style>
+        <script type = "text/javascript">
+            function check() {
+                var pwd1 = document.register_form.pwd1.value;
+                var pwd2 = document.register_form.pwd2.value;
+                if (pwd1 != pwd2) {
+                    alert("Warning: Password differs. Please confirm your password again.");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        </script>
+    </head>
+
+        <body>
+             <br><br><br><br>
+             <div class = "relative"><code style = "font-size: 1.3em; color: red;" >
+                <h2>Register</h2>
+            </code></div>
+            <br><br>
+            
+            <form name = "register_form"; action = "register.php"; method = "POST";
+             style = "font-weight: bold;" onsubmit = "return check()">
+                
+                <div style="color:blue" class = "relative"><label>
+                    Username: <input type = "text" name = "username" required = "true" placeholder = "Input your username"/>
+                </label></div><br>
+                
+                <div style="color:blue" class = "relative"><label>
+                    Email address: &nbsp;<input type = "email" name = "email" required = "true" placeholder = "Input your email address"/>
+                </label></div><br>
+                
+                <div style="color:blue" class = "relative"><label>
+                    Password &nbsp;<input type = "password" name = "pwd1" required = "true" placeholder = "Input your password 1st"/>
+                </label></div><br>
+                
+                <div style="color:blue" class = "relative"><label>
+                    Confirm password: &nbsp;<input type = "password" name = "pwd2" 
+         	   			onblur = "check()" required = "true" placeholder = "Input your password 2nd"/>
+                </label></div>
+                <br><br>
+        
+                <div class = "relative"><label>
+                   <input type = "Submit" value = "Submit" style = "font-size: 50px" required = "true"/>
+                </label></div><br>
+            </form>
+         </body>
+
+</html>

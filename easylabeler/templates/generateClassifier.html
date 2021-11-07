@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Generate Classifier</title>
+		
+		<style type = "text/css">
+			body {
+				background: url("static/images/plainBackground.jpeg");
+				background-size: cover;
+			}
+			.relative{
+				position: relative;
+				left: 35%;
+			}
+			.relative2{
+				position: relative;
+				left: 27.5%;
+				font-weight: 500;
+			}
+			.buttonStyle1{
+				position: relative;
+				left: 42.5%;
+				background-color: #0099CC; /* Blue */
+				color: white;
+				padding: 10px 18px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 15px;
+				font-weight: 600;
+				border: none;
+				transition-duration: 0.4s;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.19);
+			}
+			.buttonStyle1:hover{
+				background-color: #009999;
+				color: white;
+				cursor: pointer;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+				font-weight: 900;
+			}
+			.buttonStyle2{
+				background-color: #FFFFF0; 
+				border: 2.5px solid #4CAF50;
+				color: black;
+				padding: 6px 12px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 12px;
+				margin: 4px 2px;
+				transition-duration: 0.4s;
+				font-weight: 600;
+				position: relative;
+				left: 27.5%;
+			}
+			.buttonStyle2:hover{
+				background-color: #4CAF50;
+				color: white;
+				cursor: pointer;
+				font-weight: 900;
+			}
+			.textareaStyle{
+				border:0;
+				border-radius:5px;
+				background-color:#FFFFF0;
+				resize: none;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<button class="buttonStyle1"; style="left:40%" onclick="location.href='{% url 'runMLService' %}'">Generate Initial Classifier</button><br><br>
+		<code class="relative" name="hint" id="hint" style="color:red;font-weight:600;font-size:large;"> {{returnData}} </code>
+		<hr>
+				
+		&nbsp;<button type="button" class = "buttonStyle2" onclick="location.href='{% url 'returnResults' %}'">Show Next Text</button>
+		<button type="button" class = "buttonStyle2" onclick="location.href='{% url 'runMLService' %}'" style="left:36%">
+			Generate New Classifier with Newly Labeled Data</button><br>
+		
+		<form action="handleFormData" method="get" style = "font-weight: bold;" class="relative2">
+			<label><textarea readonly="readonly" class="textareaStyle" name = "textarea" rows="17" cols="80" id="textarea">{{returnData2}}</textarea></label><br>
+			&nbsp;<input type = "text" name = "choice" 
+				style="width:60px;height:24px;font-weight:900;text-align:center;border-radius:3px;border:1;background-color:#FFFFF0;"
+				oninput="value = value.replace(/[^\d]/g,'')">
+			<input type = "Submit" class = "buttonStyle2" value = "Submit Label >>" style="left: 1%" required = "true"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<code style="color:blue; font-size:large; background-color: #FFFFF0"> {{accuracy}} </code>
+		</form>
+	
+		<p class = "relative2" name = "hint" id = "hint" style = "color: red;"> <code> {{returnData3}} </code> </p>
+			
+		<code class = "relative2" name = "hint2" id = "hint2" style = "color: green; background-color: #FFFFF0; font-size: medium;">
+			Click the button below to obtain your labeled files if you are happy with the results.</code><br><br>
+		<button class = "buttonStyle1" style="left: 29%" onclick="location.href='{% url 'checkLabeledData' %}'">Check Labeled Files</button>
+		<button class = "buttonStyle1" style="left: 30%" onclick="location.href='{% url 'generateLabeledFiles' %}'">Generate Labeled Files</button>
+		<button class = "buttonStyle1" style="left: 31%"><a href="http://127.0.0.1:8888/EasyLabeler/uploadDatasets.php">B A C K</a></button>
+		
+		&nbsp;<p class = "relative2" name = "hint5" id = "hint5" style = "color: red;"> <code style="background-color: #FFFFF0;"> {{returnData7}} </code></p>
+		<form action="handleChangedData" method="get" style = "font-weight: bold;" class="relative2">
+			<label><textarea readonly="readonly" class="textareaStyle" name = "textarea2" rows="17" cols="80" id="textarea2">{{returnData5}}</textarea></label><br>
+			&nbsp;<input type = "text" name = "choice2" 
+				style="width:60px;height:24px;font-weight:900;text-align:center;border-radius:3px;border:1;background-color:#FFFFF0;"
+				oninput="value = value.replace(/[^\d]/g,'')">
+			<input type = "Submit" class = "buttonStyle2" value = "Confirm Change >>" style="left: 1%" required = "true"/>
+			<button type = "button" class="buttonStyle2" style="left: 16%" onclick="location.href='{% url 'checkLabeledData' %}'">Show Next Text</button>
+		</form>
+		
+		<p class = "relative2" name = "hint4" id = "hint4" style = "color: red;"> <code style="background-color: #FFFFF0;"> {{returnData6}} </code> </p>
+		<p class = "relative2" name = "hint3" id = "hint3" style = "color: red; font-size: large; font-weight: 700;">
+			<code style="background-color: #FFFFF0;">{{returnData4}}</code></p><br><br><br><br>
+				
+	</body>
+</html>
