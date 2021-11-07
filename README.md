@@ -21,5 +21,5 @@ the application owned so as to make it improved in the future. <br><br>
 <img src="READMEimages/active_learning.png" alt="screenshot1" width="480" height="300"><br><br>
 <img src="READMEimages/design.png" alt="screenshot2" width="480" height="300"><br><br>
 <img src="READMEimages/login.png" alt="screenshot3" width="650" height="400"><br><br>
-<img src="READMEimages/main1.png" alt="screenshot4" width="650" height="400"><br><br>
+<img src="READMEimages/main1.png" alt="screenshot4" width="650" height="500"><br><br>
 <img src="READMEimages/main2.png" alt="screenshot5" width="650" height="600"><br><br>
