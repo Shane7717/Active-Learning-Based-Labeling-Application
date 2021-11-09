@@ -1,6 +1,7 @@
 *Note: This project was tested locally with MySQL* <br><br>
 *Programming Languages: ```HTML, CSS, JavaScript, PHP, Python```* <br>
-*Main Framework: ```Django```*
+*Main Framework: ```Django```* <br>
+*Main Library:```Tensorflow```*
 
 ### Brief Introduction
 Data is extremely essential in the field of machine learning. In terms of supervised learning and semi-supervised learning, 
